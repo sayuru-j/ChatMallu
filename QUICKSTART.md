@@ -32,6 +32,9 @@ ollama pull mistral:7b-instruct-q4_0
 Open a **new terminal** in the project folder:
 
 ```bash
+# Navigate to the backend folder
+cd fast-api
+
 # Install Python dependencies (first time only)
 pip install -r requirements.txt
 

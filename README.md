@@ -27,6 +27,7 @@ A FastAPI backend + React frontend for character-based AI chat powered by Ollama
 
 Install Python dependencies:
 ```bash
+cd fast-api
 pip install -r requirements.txt
 ```
 
@@ -54,6 +55,7 @@ You need to run **two servers** in separate terminals:
 
 ### Terminal 1 - Backend (FastAPI)
 ```bash
+cd fast-api
 python main.py
 # Running on http://localhost:8000
 ```
@@ -80,8 +82,9 @@ ChatMallu/
 │   │   └── main.tsx         # Entry point
 │   ├── package.json
 │   └── vite.config.ts
-├── main.py                  # FastAPI backend
-├── requirements.txt         # Python dependencies
+├── fast-api/                # FastAPI backend
+│   ├── main.py             # FastAPI application
+│   └── requirements.txt    # Python dependencies
 └── README.md               # This file
 ```
 
@@ -208,7 +211,7 @@ data: {"done": true}
 
 ### Backend (FastAPI)
 
-Edit `main.py`:
+Edit `fast-api/main.py`:
 ```python
 OLLAMA_BASE_URL = "http://localhost:11434"
 MODEL_NAME = "mistral:7b-instruct-q4_0"
@@ -247,6 +250,7 @@ Character policies are system prompts that define how the AI behaves. They are s
 
 The backend uses FastAPI with hot-reload:
 ```bash
+cd fast-api
 uvicorn main:app --reload --host 0.0.0.0 --port 8000
 ```
 

@@ -56,10 +56,10 @@ build/
 *.tsbuildinfo
 
 # Frontend specific (Vite)
-vite-client/dist/
-vite-client/build/
-vite-client/.vite/
-vite-client/coverage/
+web-client/dist/
+web-client/build/
+web-client/.vite/
+web-client/coverage/
 
 # Testing
 coverage/

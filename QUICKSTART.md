@@ -55,7 +55,7 @@ Open **another new terminal** in the project folder:
 
 ```bash
 # Navigate to the frontend
-cd vite-client
+cd web-client
 
 # Install dependencies (first time only)
 npm install
@@ -117,7 +117,7 @@ You're knowledgeable about the sea, ships, and pirate history.
 - Verify with: `curl http://localhost:11434/api/tags`
 
 ### Frontend won't start
-- Make sure you ran `npm install` in the vite-client folder
+- Make sure you ran `npm install` in the web-client folder
 - Try deleting `node_modules` and running `npm install` again
 
 ### Model not found

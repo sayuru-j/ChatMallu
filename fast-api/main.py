@@ -54,7 +54,7 @@ async def root():
             "/health": "GET - Check API health",
             "/models": "GET - List available models"
         },
-        "frontend": "Run 'npm run dev' in vite-client folder to start the UI"
+        "frontend": "Run 'npm run dev' in web-client folder to start the UI"
     }
 
 @app.get("/health")

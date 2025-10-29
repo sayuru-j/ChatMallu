@@ -1,0 +1,230 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 0%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 0%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 0%;
+
+    --primary: 142 70% 49%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 0%;
+
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 40%;
+
+    --accent: 142 70% 49%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 90%;
+    --input: 0 0% 95%;
+    --ring: 142 70% 49%;
+
+    --radius: 0.5rem;
+    
+    /* WhatsApp Light Theme Colors */
+    --wa-green: 142 70% 49%;
+    --wa-green-dark: 142 70% 45%;
+    --wa-bg: 0 0% 92%;
+    --wa-panel-bg: 0 0% 100%;
+    --wa-panel-header: 240 5% 96%;
+    --wa-bubble-sent: 142 70% 49%;
+    --wa-bubble-received: 0 0% 100%;
+    --wa-text-primary: 0 0% 0%;
+    --wa-text-secondary: 0 0% 40%;
+    --wa-text-muted: 0 0% 60%;
+    --wa-divider: 0 0% 90%;
+    --wa-hover: 0 0% 96%;
+    --wa-chat-pattern: 0 0% 98%;
+    
+    --shadow-soft: 0 1px 2px hsl(0 0% 0% / 0.1);
+    --shadow-medium: 0 1px 3px hsl(0 0% 0% / 0.15);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 0 0% 7%;
+    --foreground: 220 10% 90%;
+
+    --card: 0 0% 10%;
+    --card-foreground: 220 10% 90%;
+
+    --popover: 0 0% 10%;
+    --popover-foreground: 220 10% 90%;
+
+    --primary: 142 70% 49%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 13%;
+    --secondary-foreground: 220 10% 90%;
+
+    --muted: 0 0% 13%;
+    --muted-foreground: 0 0% 60%;
+
+    --accent: 142 70% 49%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 20%;
+    --input: 0 0% 15%;
+    --ring: 142 70% 49%;
+    
+    /* WhatsApp Dark Theme Colors */
+    --wa-green: 142 70% 49%;
+    --wa-green-dark: 142 70% 45%;
+    --wa-bg: 0 0% 7%;
+    --wa-panel-bg: 0 0% 11%;
+    --wa-panel-header: 0 0% 13%;
+    --wa-bubble-sent: 142 70% 26%;
+    --wa-bubble-received: 0 0% 13%;
+    --wa-text-primary: 220 10% 90%;
+    --wa-text-secondary: 0 0% 65%;
+    --wa-text-muted: 0 0% 50%;
+    --wa-divider: 0 0% 20%;
+    --wa-hover: 0 0% 15%;
+    --wa-chat-pattern: 0 0% 9%;
+    
+    --shadow-soft: 0 1px 2px hsl(0 0% 0% / 0.3);
+    --shadow-medium: 0 1px 3px hsl(0 0% 0% / 0.4);
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+  
+  /* WhatsApp chat pattern background */
+  .wa-chat-pattern {
+    background-color: hsl(var(--wa-chat-pattern));
+    background-image: 
+      repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 10px,
+        hsl(var(--wa-divider) / 0.03) 10px,
+        hsl(var(--wa-divider) / 0.03) 20px
+      );
+  }
+
+  /* WhatsApp-like bubbles */
+  .wa-bubble {
+    max-width: 80ch;
+    border-radius: 16px;
+    padding: 8px 10px 6px 10px;
+    line-height: 1.25;
+    box-shadow: var(--shadow-soft);
+  }
+  .wa-bubble-sent {
+    background-color: hsl(var(--wa-bubble-sent));
+    color: white;
+    border-top-right-radius: 4px;
+  }
+  .wa-bubble-received {
+    background-color: hsl(var(--wa-bubble-received));
+    color: hsl(var(--wa-text-primary));
+    border-top-left-radius: 4px;
+  }
+  .wa-bubble-tail-sent::after {
+    content: "";
+    position: absolute;
+    right: -6px;
+    bottom: 0;
+    width: 10px;
+    height: 10px;
+    background: hsl(var(--wa-bubble-sent));
+    clip-path: polygon(0 100%, 100% 0, 100% 100%);
+  }
+  .wa-bubble-tail-received::after {
+    content: "";
+    position: absolute;
+    left: -6px;
+    bottom: 0;
+    width: 10px;
+    height: 10px;
+    background: hsl(var(--wa-bubble-received));
+    clip-path: polygon(0 0, 0 100%, 100% 100%);
+  }
+
+  /* Typing indicator */
+  .typing-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 9999px;
+    background: hsl(var(--wa-text-muted));
+    display: inline-block;
+    animation: typing 1.2s infinite ease-in-out both;
+  }
+  .typing-dot:nth-child(2) { animation-delay: 0.15s; }
+  .typing-dot:nth-child(3) { animation-delay: 0.3s; }
+
+  @keyframes typing {
+    0%, 80%, 100% { transform: translateY(0); opacity: 0.5; }
+    40% { transform: translateY(-2px); opacity: 1; }
+  }
+  
+  /* Mobile touch optimization */
+  @media (hover: none) and (pointer: coarse) {
+    button, a, input, textarea {
+      -webkit-tap-highlight-color: transparent;
+    }
+  }
+  
+  /* Prevent text size adjustment on mobile */
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  /* Mobile viewport height fix (iOS Safari address bar) */
+  .h-app {
+    height: calc(var(--vh, 1vh) * 100);
+  }
+  @supports (height: 100dvh) {
+    .h-app { height: 100dvh; }
+  }
+}

@@ -45,7 +45,7 @@ ollama list
 
 Install frontend dependencies:
 ```bash
-cd vite-client
+cd web-client
 npm install
 ```
 
@@ -62,7 +62,7 @@ python main.py
 
 ### Terminal 2 - Frontend (React + Vite)
 ```bash
-cd vite-client
+cd web-client
 npm run dev
 # Running on http://localhost:5173
 ```
@@ -75,7 +75,7 @@ Then open your browser to:
 
 ```
 ChatMallu/
-├── vite-client/              # React + Vite frontend
+├── web-client/              # React + Vite frontend
 │   ├── src/
 │   │   ├── components/       # React components
 │   │   ├── pages/           # Page components
@@ -219,7 +219,7 @@ MODEL_NAME = "mistral:7b-instruct-q4_0"
 
 ### Frontend (React)
 
-The frontend is configured in `vite-client/src/` - it automatically connects to the backend at `http://localhost:8000`.
+The frontend is configured in `web-client/src/` - it automatically connects to the backend at `http://localhost:8000`.
 
 To change the API URL, update the fetch calls in the React components.
 
@@ -258,7 +258,7 @@ uvicorn main:app --reload --host 0.0.0.0 --port 8000
 
 The frontend uses Vite with hot-reload:
 ```bash
-cd vite-client
+cd web-client
 npm run dev
 ```
 
@@ -266,7 +266,7 @@ npm run dev
 
 Build the React frontend:
 ```bash
-cd vite-client
+cd web-client
 npm run build
 ```
 
